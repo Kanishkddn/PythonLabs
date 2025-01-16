@@ -33,10 +33,43 @@ mins=(sec-(hours*3600))/60
 secs=(mins%60)/60
 print("The time will be: ",hours, mins, secs)
 
-# a=(input("Enter first number: "))
-# b=(input("Enter second number: "))
-# b[2]=a
-# a=b[1]
-# print("Swapped first num is: ",a)
-# print("Swapped second num is: ",b[1])
+#Number swap
+a=3
+b=4
+print(a,b)
+a,b=b,a
+print(a,b)
 
+#Sum of n natural nos
+n = int(input("Enter the value of n: "))
+sum_natural = n * (n + 1) // 2  # Using the formula n(n+1)/2
+print(f"The sum of the first {n} natural numbers is {sum_natural}.")
+
+
+#Write a program to find left shift and right shift values of a given number.
+num = int(input("Enter a number: "))
+shift = int(input("Enter the number of positions to shift: "))
+
+left_shift = num << shift  # Left shift
+right_shift = num >> shift  # Right shift
+
+print(f"Left shift of {num} by {shift} positions: {left_shift}")
+print(f"Right shift of {num} by {shift} positions: {right_shift}")
+
+#Using membership operator find whether a given number is in sequence (10,20,56,78,89)
+sequence = (10, 20, 56, 78, 89)
+num = int(input("Enter a number: "))
+
+if num in sequence:
+    print(f"{num} is in the sequence {sequence}.")
+else:
+    print(f"{num} is not in the sequence {sequence}.")
+
+string = input("Enter a string: ")
+char = input("Enter a character to search for: ")
+
+#Using membership operator find whether a given character is in a string.
+if char in string:
+    print(f"The character '{char}' is present in the string.")
+else:
+    print(f"The character '{char}' is not present in the string.")
