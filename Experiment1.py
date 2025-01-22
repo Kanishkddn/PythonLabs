@@ -6,7 +6,7 @@ print(str1)
 print('''Rohit's date of birth is 12/05/1999\n''')
 x="Hello\n"
 print(x)
-inte=int(input("Enter an Integar: "))
+inte=int(input("Enter an Integar: 8"))
 flo=float(input("Enter a Float Value: "))
 string=str(input("Enter a String: "))
 print(inte)
