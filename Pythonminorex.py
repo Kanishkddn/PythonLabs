@@ -7,18 +7,19 @@ def weightchange(value, fromm, too):
     return value * conversionvals2[too] / conversionvals2[fromm]
 
 def temperaturechange(value, fromm, too):
-    if fromm == "Celsius":
-        return value * 9/5 + 32 if too == "Fahrenheit" else value + 273.15
-    elif fromm == "Fahrenheit":
-        return (value - 32) * 5/9 if too == "Celsius" else (value - 32) * 5/9 + 273.15
-    elif fromm == "Kelvin":
-        return value - 273.15 if too == "Celsius" else (value - 273.15) * 9/5 + 32
+    fromm, too = fromm.lower(), too.lower()
+    if fromm == "celsius":
+        return value * 9/5 + 32 if too == "fahrenheit" else value + 273.15
+    elif fromm == "fahrenheit":
+        return (value - 32) * 5/9 if too == "celsius" else (value - 32) * 5/9 + 273.15
+    elif fromm == "kelvin":
+        return value - 273.15 if too == "celsius" else (value - 273.15) * 9/5 + 32
 
 def bmi_calculator(weight, height):
     bmi = weight / (height ** 2)
     print(f"BMI: {bmi:.2f}")
     if bmi < 18.5:
-        print("Category: Underweight")
+        print("Category: Underweight")   
     elif 18.5 <= bmi < 24.9:
         print("Category: Normal weight")
     elif 25 <= bmi < 29.9:
@@ -28,7 +29,7 @@ def bmi_calculator(weight, height):
 
 while True:
     print("Select conversion type: length, weight, temperature, bmi (or enter 0 to exit)")
-    changestype = input("Enter type: ")
+    changestype = input("Enter type: ").lower().strip()
     
     if changestype == "0":
         print("Exiting program.")
@@ -36,13 +37,13 @@ while True:
     
     if changestype == "length":
         value = float(input("Enter value: "))
-        fromm = input("Enter from unit (millimeter, centimeter, kilometer, mile, yard, foot, inch): ")
-        too = input("Enter to unit (millimeter, centimeter, kilometer, mile, yard, foot, inch): ")
+        fromm = input("Enter from unit (millimeter, centimeter, kilometer, mile, yard, foot, inch): ").lower()
+        too = input("Enter to unit (millimeter, centimeter, kilometer, mile, yard, foot, inch): ").lower()
         print("Converted value:", lengthchange(value, fromm, too))
     elif changestype == "weight":
         value = float(input("Enter value: "))
-        fromm = input("Enter from unit (milligram, gram, kilogram, pound, ounce): ")
-        too = input("Enter to unit (milligram, gram, kilogram, pound, ounce): ")
+        fromm = input("Enter from unit (milligram, gram, kilogram, pound, ounce): ").lower()
+        too = input("Enter to unit (milligram, gram, kilogram, pound, ounce): ").lower()
         print("Converted value:", weightchange(value, fromm, too))
     elif changestype == "temperature":
         value = float(input("Enter value : "))
